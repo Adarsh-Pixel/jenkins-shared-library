@@ -4,3 +4,6 @@ def info(message) {
 }
 
 info("Cloud")
+
+// call function
+//call() - can be called as default function
