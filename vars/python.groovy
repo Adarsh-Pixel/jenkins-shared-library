@@ -17,13 +17,6 @@ def call () {
                     }
                 }
 
-                stage('Generating Artifacts') {
-                    steps {
-                        sh "echo Generating Artifacts for $COMPONENT"
-                        sh "pip install pylint"
-
-                    }
-                }
             }
         }
     }
