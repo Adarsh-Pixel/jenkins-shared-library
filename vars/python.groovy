@@ -1,6 +1,6 @@
 def lintchecks() {
                     sh "echo Installing Pylint"
-                    sh "pylint mymodule.py"
+                    sh "pylint --recursive=y mydir mymodule mypackage"
                     sh "echo linkchecks completed for ${COMPONENT}"
 }
 
