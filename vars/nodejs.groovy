@@ -26,7 +26,7 @@ def call () {
                 stage('Sonar checks') {
                     steps {
                         sh "env"
-                        sh "sonar-scanner -Dsonar.host.url=http://${SONAR_URL}:9000/ -Dsonar.sources=. -Dsonar.projectKey=${COMPONENT} -Dsonar.login=${SONAR_CRED_USR} -Dsonar.password=${SONAR_CRED_PSW}"
+                        sh "sonar-scanner -Dsonar.host.url=http://${SONAR_URL}:9000/ -Dsonar.sources=. -Dsonar.projectKey=${COMPONENT} -Dsonar.login=${SONAR_CRED} -Dsonar.password=${SONAR_CRED}"
                     }
                 }
 
