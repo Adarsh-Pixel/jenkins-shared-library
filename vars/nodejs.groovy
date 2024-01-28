@@ -22,7 +22,7 @@ def call () {
 
                     }
                 }
-                
+
                 stage('Sonar checks') {
                     steps {
                         sh "env"
