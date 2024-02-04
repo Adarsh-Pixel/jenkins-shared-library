@@ -23,14 +23,6 @@ def call () {
                     }
                 }
 
-                stage('Generating Artifacts') {
-                    steps {
-                        sh "echo Generating Artifacts...."
-                        sh "npm install"
-
-                    }
-                }
-                
                 stage('Sonar checks') {
                     steps {
                         sh "env"
@@ -38,7 +30,13 @@ def call () {
                     }
                 }
 
+                stage('Generating Artifacts') {
+                    steps {
+                        sh "echo Generating Artifacts...."
+                        sh "npm install"
 
+                    }
+                }
 
 
             }
