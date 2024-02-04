@@ -1,4 +1,4 @@
-def lintchecks() {
+def lintChecks() {
                     sh "echo Installing JSlist"
                     sh "npm i jslint"
                     sh "echo starting linkchecks for ${COMPONENT}"
@@ -17,7 +17,7 @@ def call () {
                 stage('Lint Checks') {
                     steps {
                         script{
-                            lintchecks()
+                            lintChecks()
                         }
 
                     }
