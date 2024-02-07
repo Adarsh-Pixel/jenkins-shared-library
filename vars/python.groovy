@@ -1,6 +1,6 @@
-def lintchecks() {
-                    sh "echo Installing Pylint"
-                    sh "pylint payment.py || true"
+def lintChecks() {
+                    sh "echo Starting lintChecks for ${COMPONENT}"
+                    sh "pylint payment *.py || true"
                     sh "echo linkchecks completed for ${COMPONENT}"
 }
 
