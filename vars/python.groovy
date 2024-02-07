@@ -1,7 +1,7 @@
 def lintChecks() {
-                    sh "echo Starting lintChecks for ${COMPONENT}"
-                    sh "pylint *.py || true"
-                    sh "echo linkchecks completed for ${COMPONENT}"
+        sh "echo Starting lintChecks for ${COMPONENT}"
+        sh "pylint *.py || true"
+        sh "echo linkchecks completed for ${COMPONENT}"
 }
 
 def call () {
@@ -29,7 +29,7 @@ def call () {
                         sh "echo ${COMPONENT} sonar checks are completed"
                     }
                 }
-                stege{'Generating artifacts'} {
+                stage{'Generating artifacts'} {
                     steps {
                         sh "echo Artifact generation complete"
                     }
