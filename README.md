@@ -35,3 +35,10 @@ The vars directory hosts script files that are exposed as a variable in Pipeline
 2) when changes reach main branch over a PR, that means code it stage and then if we push a tag marking it stable
 3) When we run the job against a TAG, only during that time, I want artifacts should be created and should be pushed to nexus. 
 ---
+
+# What type of objects are supposed to be stored where ?
+
+---
+1) Code     : Plain Text : Version controlling : GitHub
+2) Binary   : Artifacts  : Binary storage [vss] : JFrong/Nexus
+---
