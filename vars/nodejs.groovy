@@ -74,7 +74,7 @@ def call () {
                     steps {
                         sh '''
                         echo Uploading ${COMPONENT} artifact to nexus
-                        curl -v -u ${NEXUS_CRED_USR}:${NEXUS_CRED_PSW} --upload-file ${COMPONENT}-${TAG_NAME}.zip http://${NEXUS_URL}:8081/repository/${COMPONENT}/${COMPONENT}
+                        curl -v -u ${NEXUS_CRED_USR}:${NEXUS_CRED_PSW} --upload-file ${COMPONENT}-${TAG_NAME}.zip http://${NEXUS_URL}:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip
                         echo Uploading ${COMPONENT} artifact to nexus is completed
                         '''
                     }
