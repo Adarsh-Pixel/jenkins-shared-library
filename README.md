@@ -63,3 +63,7 @@ This ensures once an artifact is publised, it will never be overridden.
         a) If the artifact is available in NEXUS repo, then I don't generate the artifact.
         b) If the artifact is not available in Nexus repo, then I will be generating the artifact and then upload it 
 ---
+
+### Command to check the availability of the artifact in the nexus :
+
+curl http://x.y.p.q:8081/service/rest/repository/browse/catalogue/ | grep catalogue-002
