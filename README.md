@@ -48,3 +48,18 @@ The vars directory hosts script files that are exposed as a variable in Pipeline
 ---
 This ensures once an artifact is publised, it will never be overridden.
 ---
+
+>> How are we uploading the artifact now ?
+---
+1) First we are creating the artifact all the time when running against a TAG!
+2) Then attempting to upload the artifact : 
+        a) if the artifact is not available, then it's uploading the artifact.
+        b) if the artifact already exists, then it's not uploading.
+---
+
+>>> Rather than following steps 1 & 2 :
+---
+1) I'd like to check the artifact first :
+        a) If the artifact is available in NEXUS repo, then I don't generate the artifact.
+        b) If the artifact is not available in Nexus repo, then I will be generating the artifact and then upload it 
+---
