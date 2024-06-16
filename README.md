@@ -42,3 +42,9 @@ The vars directory hosts script files that are exposed as a variable in Pipeline
 1) Code     : Plain Text : Version controlling : GitHub
 2) Binary   : Artifacts  : Binary storage [vss] : JFrong/Nexus
 ---
+
+>>> What is Allor Redeploy in Nexus Repository? (Never allow redeploy)
+
+---
+This ensures once an artifact is publised, it will never be overridden.
+---
