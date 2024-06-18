@@ -62,8 +62,8 @@ def call () {
                     }
                     steps {
                         script {
-                        def UPLOAD_STATUS=sh(returnStdout: true, script: "curl http://${NEXUS_URL}:8081/service/rest/repository/browse/${COMPONENT}/ | grep ${COMPONENT}-${TAG_NAME}")
-
+                        def UPLOAD_STATUS=sh(returnStdout: true, script: "curl -L -s http://${NEXUS_URL}:8081/service/rest/repository/browse/${COMPONENT}/ | grep ${COMPONENT}-${TAG_NAME}.zip || true")
+                        print UPLOAD_STATUS
                         }
                     }
                 }
@@ -71,6 +71,7 @@ def call () {
                 stage('Generating Artifacts') {
                     when {
                         expression { env.TAG_NAME != null }
+                        expression { env.UPLOAD_STATUS == "" }
                     }
                     steps {
                         sh "echo Generating Artifacts...."
@@ -82,6 +83,7 @@ def call () {
                 stage('Uploading Artifacts') {
                     when {
                         expression { env.TAG_NAME != null }
+                        expression { env.UPLOAD_STATUS == "" }
                     }
                     steps {
                         sh '''
