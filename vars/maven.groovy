@@ -1,7 +1,8 @@
 def call() {
     node {
         common.lintChecks()
-        env.ARGS="-Dsonar.java.binaries=target/" 
+        env.ARGS="-Dsonar.java.binaries=target/"
+        env.NEXUS_USR="172.31.45.234"
         common.sonarChecks()
         common.testCases()
     }
