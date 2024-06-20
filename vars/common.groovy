@@ -28,7 +28,7 @@ def lintChecks() {
                     sh "echo linkchecks completed for ${COMPONENT}"
                 }
                 else {
-                     sh "Lint checks for frontend are in progress"   
+                     sh "echo Lint checks for frontend are in progress"   
                 }
         }
 }
