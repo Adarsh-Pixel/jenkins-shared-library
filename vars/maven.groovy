@@ -1,9 +1,11 @@
-def lintchecks() {
-                    sh "echo Installing JSlist"
-                    sh "mvn checkstyle:check || true"
-                    sh "echo linkchecks completed for ${COMPONENT}"
+def call() {
+    node {
+        common.lintChecks()
+        common.sonarChecks()
+    }
 }
 
+/*
 def call () {
         pipeline {
             agent any 
@@ -80,3 +82,4 @@ def call () {
             }
         }
     }
+*/
