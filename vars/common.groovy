@@ -54,7 +54,7 @@ def testCases() {
 }
  
 def artifacts() {
-        
+
         stage('checking the Artifacts Release') {
               env.UPLOAD_STATUS=sh(returnStdout: true, script: "curl -L -s http://${NEXUS_URL}:8081/service/rest/repository/browse/${COMPONENT}/ | grep ${COMPONENT}-${TAG_NAME}.zip || true")
               print UPLOAD_STATUS
@@ -85,10 +85,11 @@ def artifacts() {
                 }
 
             stage('Uploading the Artifacts') {
-                        withCredentials([usernamePassword(credentialsId: 'NEXUS_CRED', passwordVariable: 'NEXUS_PSW', usernameVariable: 'NEXUS_USR')])
+                        withCredentials([usernamePassword(credentialsId: 'NEXUS_CRED', passwordVariable: 'NEXUS_PSW', usernameVariable: 'NEXUS_USR')]){
                         sh "echo Uploading ${COMPONENT} artifact to nexus"
                         sh "curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${COMPONENT}-${TAG_NAME}.zip http://${NEXUS_URL}:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip"
                         sh "echo Uploading ${COMPONENT} artifact to nexus is completed"
+                        }
             }
 
         }
